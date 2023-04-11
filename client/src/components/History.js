@@ -132,13 +132,16 @@ const History = () => {
   const [edit, setEdit] = useState(false);
   const [deleted, setDeleted] = useState();
 
-  useEffect(async () => {
-    await fetch(`${process.env.REACT_APP_BASE_URL}/history`)
-      .then((res) => res.json())
-      .then((data) => {
-        setHistory(data);
-        setLoading(false);
-      });
+  useEffect(() => {
+    async function fetchData() {
+      fetch(`${process.env.REACT_APP_BASE_URL}/history`)
+        .then((res) => res.json())
+        .then((data) => {
+          setHistory(data);
+          setLoading(false);
+        });
+    }
+    fetchData();
   }, [prediction, deleted]);
 
   const handleUpdate = (image_id, image_prediction) => {

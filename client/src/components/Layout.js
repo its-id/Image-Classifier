@@ -7,6 +7,7 @@ import Home from "./Home";
 
 const Layout = () => {
   const { component } = useParams();
+  console.log("component", component);
   return (
     <div className="min-h-full">
       <Navbar component={component} />
@@ -21,7 +22,7 @@ const Layout = () => {
         </header>
         <main>
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            {component === "history" ? <History /> : component === undefined ? <Home /> : <Page404 />}
+            {component === "history" ? <History /> : component === undefined || component === null ? <Home /> : <Page404 />}
           </div>
         </main>
       </div>

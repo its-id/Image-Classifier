@@ -9,7 +9,7 @@ from pymongo import MongoClient
 from datetime import datetime
 import uuid
 import cloudinary
-from cloudinary.uploader import upload, destroy
+from cloudinary.uploader import upload
 from cloudinary.utils import cloudinary_url
 
 app = Flask(__name__)

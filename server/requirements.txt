@@ -1,0 +1,11 @@
+transformers
+torch
+gunicorn
+flask
+dotenv
+flask_cors
+PIL
+pymongo
+datetime
+uuid
+cloudinary

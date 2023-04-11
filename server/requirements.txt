@@ -4,7 +4,7 @@ gunicorn
 flask
 dotenv
 flask_cors
-PIL
+Pillow
 pymongo
 datetime
 uuid

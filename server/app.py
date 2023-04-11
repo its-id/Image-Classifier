@@ -9,7 +9,7 @@ from pymongo import MongoClient
 from datetime import datetime
 import uuid
 import cloudinary
-from cloudinary.uploader import upload
+from cloudinary.uploader import upload, destroy
 from cloudinary.utils import cloudinary_url
 
 app = Flask(__name__)
@@ -81,7 +81,7 @@ def delete():
         id = request.form.get('image_id')
 
         # delete the image from cloudinary
-        cloudinary.uploader.destroy(id)
+        destroy(id)
 
         # delete the complete element from database
         imagePredictions.delete_one({"image_id": id})

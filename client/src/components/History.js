@@ -132,8 +132,8 @@ const History = () => {
   const [edit, setEdit] = useState(false);
   const [deleted, setDeleted] = useState();
 
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_BASE_URL}/history`)
+  useEffect(async () => {
+    await fetch(`${process.env.REACT_APP_BASE_URL}/history`)
       .then((res) => res.json())
       .then((data) => {
         setHistory(data);

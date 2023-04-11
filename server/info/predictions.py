@@ -1,4 +1,3 @@
-from info import mongo
 import torch
 from transformers import AutoImageProcessor, ResNetForImageClassification
 # import uuid

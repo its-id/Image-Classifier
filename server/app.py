@@ -51,6 +51,9 @@ def predict():
         pd = predictions.Predictions()
         res = pd.predict(img)
 
+        # delete the imagefile from folder
+        os.remove(image_location)
+
         # store the image information in the database
         imagePredictions.insert_one({"imageURL": url, "imageName": image_name, "prediction": res, "date": datetime.now(), "image_id": image_id})
 

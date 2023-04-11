@@ -34,7 +34,7 @@ def predict():
 
         # get the image from the request
         image = request.files['file']
-        image_location = './images/' + image.filename
+        image_location = 'images/' + image.filename
         image_name = image.filename
         image.save(image_location)
 

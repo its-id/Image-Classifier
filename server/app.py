@@ -80,6 +80,9 @@ def delete():
     if(request.method == 'POST'):
         id = request.form.get('image_id')
 
+        # delete the image from cloudinary
+        cloudinary.uploader.destroy(id)
+
         # delete the complete element from database
         imagePredictions.delete_one({"image_id": id})
 
